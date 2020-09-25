@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './Header.css';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
@@ -7,16 +7,18 @@ import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
 
 function Header() {
-    const [{basket}, user] = useStateValue();
+    const history = useHistory();
+    const [{basket, user}] = useStateValue();
 
     const login =() =>{
         if(user){
             auth.signOut();
-
+            // history.push('/login');
         }
-    }
         
+    }        
         console.log('header user:' , user); //TODO remove this
+        console.log(basket)
 
     return (
         <nav className='header'>
@@ -45,7 +47,7 @@ function Header() {
                 {/* 1st link */}
                 <Link to={!user && '/login'} className='header__link'>
                     <div onClick={login} className='header__option'>
-                    <span className='header__optionLine1'>Hello {user.email}</span>
+                    <span className='header__optionLine1'>Hello</span>
                     <span className='header__optionLine2'>{user? 'Sign Out' :'Sign In'}</span>
                     </div>
                 </Link>

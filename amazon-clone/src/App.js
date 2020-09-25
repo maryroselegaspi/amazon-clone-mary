@@ -35,7 +35,7 @@ useEffect(() => {
 },[]);
 
 console.log('The user is >>>', user); 
-
+console.log(user)
   return (
     <Router>
       <div className="app">
