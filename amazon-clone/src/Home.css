@@ -1,8 +1,27 @@
 .home{
-
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.home__row{
+    display: flex;
+    z-index: 1;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: -20px;
+    margin-bottom: 10px;
 }
 .home__image{
     width: 100%;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-  
+    z-index: -1;
+    margin-bottom: -100px;
+    /* border: 5px solid lightgray; */
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,5), rgba(0,0,0,0));
+    /* padding-left: 10px;
+    padding-right: 20px; */
+    /* padding: 20px; */
 }
+/* TODO: REMOVE THIS */
+.home__carousel{
+    border: 1px solid lightgray;
+} 
