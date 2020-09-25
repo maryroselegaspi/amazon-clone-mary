@@ -13,7 +13,7 @@ function Header() {
     return (
         <nav className='header'>
             {/* Logo on the left => img */}
-            <Link to='/login'>
+            <Link to='/'>
             <img  
                 className='header__logo' 
                 src='http://pngimg.com/uploads/amazon/amazon_PNG25.png' 

@@ -24,7 +24,7 @@ function Product({image, title, price, id, rating}) {
             {/* <h1>this is the product section</h1> */}
             <div className='product__info'>
                 <p>{title}</p>
-                <p className='product__price' ><small>$</small>{price}</p>
+                <p className='product__price' ><small>$</small><strong>{price}</strong></p>
 
                 {/* Show the rating */}
                 <div className='product__rating'>
