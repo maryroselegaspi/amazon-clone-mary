@@ -23,11 +23,11 @@ function Home() {
             {/* <h1> I am the home page</h1> */}
             <AliceCarousel 
                 autoPlay 
-                autoPlayInterval="5000"
+                autoPlayInterval={5000}
                 touchTrackingEnabled
-                buttonsDisabled = 'true'
+                buttonsDisabled = {true}
                 className='home__carousel'
-                dotsDisabled='true'
+                dotsDisabled={true}
             >
                 <img 
                     src='https://images-fe.ssl-images-amazon.com/images/G/35/kindle/merch/2020/scrt/gw/dajc8lx2fmqpb/1500x600._CB404653907_.jpg' 
