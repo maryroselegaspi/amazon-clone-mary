@@ -1,0 +1,30 @@
+.addposter {
+  /* margin-top: -70px; */
+  display: flex;
+  flex-direction: column;
+  max-height: 400px; /*400*/
+  min-width: 100px; /*100*/
+  margin: 10px;
+  padding: 20px;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+  align-items: center;
+  border: 1px solid lightgray;
+}
+.addposter__info {
+  height: 100px;
+  margin-bottom: -50px;
+  font-weight: 700;
+}
+.addposter > img {
+  width: 100%;
+  object-fit: contain;
+  max-height: 200px;
+  margin-bottom: 10px;
+}
+/* .product > button{
+    background-color: #f0c14b;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29; 
+} */
