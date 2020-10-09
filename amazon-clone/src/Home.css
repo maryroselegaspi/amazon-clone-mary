@@ -2,6 +2,8 @@
   max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .home__row {
   display: flex;
@@ -14,11 +16,11 @@
 .home__image {
   width: 100%;
   z-index: -1;
-  margin-bottom: -100px;
+  margin-bottom: -200px;
   /* border: 5px solid lightgray; */
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 5), rgba(0, 0, 0, 0));
-  /* padding-left: 10px;
-    padding-right: 20px; */
+  /* padding-left: 20px;
+  padding-right: 20px; */
   /* padding: 20px; */
 }
 /* TODO: REMOVE THIS */

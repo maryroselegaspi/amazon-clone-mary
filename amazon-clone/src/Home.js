@@ -48,6 +48,16 @@ function Home() {
       url:
         "https://images-fe.ssl-images-amazon.com/images/G/35/kindle/journeys/NjFmY2EzNTMt/NjFmY2EzNTMt-ZjY2N2ZlMjIt-w1500._CB404739069_.jpg",
     },
+    {
+      id: 7,
+      url:
+        "https://images-fe.ssl-images-amazon.com/images/G/35/prime/gateway/v2/DesktopHero_Prime_1500x600_v1_11._CB428394564_.jpg",
+    },
+    {
+      id: 8,
+      url:
+        "https://images-fe.ssl-images-amazon.com/images/G/35/AU-hq/2020/img/DVD/Movie_BOGO_Hero_Tall_1500x600._CB403301558_.jpg",
+    },
   ];
 
   return (
