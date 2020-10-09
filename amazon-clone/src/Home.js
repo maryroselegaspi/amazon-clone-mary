@@ -83,6 +83,37 @@ function Home() {
       </AliceCarousel>
 
       {/* Products here id, title, price, rating, image*/}
+      {/* 4 row Addposter */}
+      <div className="home__row">
+        <Addposter
+          id="123451"
+          title="Children's books"
+          price={0}
+          rating={5}
+          image="https://images-fe.ssl-images-amazon.com/images/G/35/wishlist/marketing/Wishlist_Desktop_Cat_Card_1._SY304_CB407264123_.jpg"
+        />
+        <Addposter
+          id="123451"
+          title="Pre-order Oculus Quest 2"
+          price={0}
+          rating={5}
+          image="https://images-fe.ssl-images-amazon.com/images/G/35/CategoryMarketing/2020/Events/fenty._SY304_CB404124436_.jpg"
+        />
+        <Addposter
+          id="123451"
+          title="Savage X Fenty"
+          price={0}
+          rating={5}
+          image="https://images-fe.ssl-images-amazon.com/images/G/35/img15/Oculus2/email/379x304._SY304_CB404426335_.jpg"
+        />
+        <Addposter
+          id="123451"
+          title="Create and share gift ideas"
+          price={0}
+          rating={5}
+          image="https://images-fe.ssl-images-amazon.com/images/G/35/AU-hq/2020/img/Beauty_Mass_/XCM_CUTTLE_1268137_1376754_AU_3378552_186x116_1X_en_AU._SY116_CB404078388_.jpg"
+        />
+      </div>
       <div className="home__row">
         <Product
           id="123445"
@@ -123,37 +154,6 @@ function Home() {
         />
       </div>
 
-      {/* 4 row Addposter */}
-      <div className="home__row">
-        <Addposter
-          id="123451"
-          title="Children's books"
-          price={0}
-          rating={5}
-          image="https://images-fe.ssl-images-amazon.com/images/G/35/wishlist/marketing/Wishlist_Desktop_Cat_Card_1._SY304_CB407264123_.jpg"
-        />
-        <Addposter
-          id="123451"
-          title="Pre-order Oculus Quest 2"
-          price={0}
-          rating={5}
-          image="https://images-fe.ssl-images-amazon.com/images/G/35/CategoryMarketing/2020/Events/fenty._SY304_CB404124436_.jpg"
-        />
-        <Addposter
-          id="123451"
-          title="Savage X Fenty"
-          price={0}
-          rating={5}
-          image="https://images-fe.ssl-images-amazon.com/images/G/35/img15/Oculus2/email/379x304._SY304_CB404426335_.jpg"
-        />
-        <Addposter
-          id="123451"
-          title="Create and share gift ideas"
-          price={0}
-          rating={5}
-          image="https://images-fe.ssl-images-amazon.com/images/G/35/AU-hq/2020/img/Beauty_Mass_/XCM_CUTTLE_1268137_1376754_AU_3378552_186x116_1X_en_AU._SY116_CB404078388_.jpg"
-        />
-      </div>
       <div className="home__row">
         <Product
           id="123450"
