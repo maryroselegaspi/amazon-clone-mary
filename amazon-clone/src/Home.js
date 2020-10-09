@@ -62,7 +62,6 @@ function Home() {
 
   return (
     <div className="home">
-      {/* <h1> I am the home page</h1> */}
       <AliceCarousel
         autoPlay
         autoPlayInterval={5000}
