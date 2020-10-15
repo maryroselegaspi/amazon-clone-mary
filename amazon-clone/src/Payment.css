@@ -1,5 +1,6 @@
 .payment {
   background-color: white;
+  border: 1px solid violet;
 }
 
 .payment__container {
@@ -8,18 +9,32 @@
   font-weight: 400;
   background-color: rgb(234, 237, 237);
   border-bottom: 1px solid lightgray;
+  border: 1px solid blue;
 }
 
 .payment__container > h1,
 a {
   text-decoration: none;
+  padding: 10px;
   /* border-bottom: 1px solid lightgray; */
+  /* border: 1px solid red; */
 }
 
 .payment__section {
-  background-color: blue;
+  background-color: blue; /*Remove this*/
   display: flex;
   padding: 20px;
   margin: 0 20px;
   border-bottom: 1px solid lightgray;
+  border: 1px solid red;
+}
+
+.payment__title {
+  flex: 0.2;
+}
+
+.payment__address,
+.payment__items,
+.payment__details {
+  flex: 0.8;
 }
