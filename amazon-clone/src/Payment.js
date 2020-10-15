@@ -20,10 +20,11 @@ function Payment() {
 
     // Submit CardElement form
     const handleSubmit = e =>{
-
+            
     }
     const handleChange = e =>{
-
+            setDisabled(e.empty);
+            setError(e.error? e.error.message:'');
     }
     return (
         <div className='payment'>
