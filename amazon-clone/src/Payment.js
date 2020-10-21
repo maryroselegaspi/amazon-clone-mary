@@ -8,6 +8,7 @@ import { useStateValue } from './StateProvider';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
 import axios from './axios';
+import {db} from './firebase';
 
 // for currency
 import CurrencyFormat from "react-currency-format";
@@ -49,6 +50,7 @@ function Payment() {
 
     },[basket])
     console.log("client secret:", clientSecret)
+    console.log(('user', user))
     // Submit CardElement form
     const handleSubmit = async(e) =>{
         e.preventDefault();
@@ -64,6 +66,17 @@ function Payment() {
             }
             
         }).then(({paymentIntent}) => {
+            
+            // Push to database firestore
+            db.collection('users')
+            .doc(user?.uid)
+            .collection('orders')
+            .doc(paymentIntent.id)
+           .set({
+               basket:basket,
+               amount: paymentIntent.amount,
+               created: paymentIntent.created
+           }) 
 
             // paymentIntent = payment confirmation
             setSucceeded(true);
