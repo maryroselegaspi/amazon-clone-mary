@@ -31,6 +31,8 @@ function Payment() {
     const stripe = useStripe();
     const elements = useElements();
 
+    const history = useHistory();
+
     //For Client Secret
     useEffect(() => {
         // generate special stripe secret which allows us to change customer
@@ -41,7 +43,7 @@ function Payment() {
                 url: `/payments/create?total=${getBasketTotal(basket) * 100}`
             });
             setClientSecret(response.data.clientSecret)
-            console.log(clientSecret)
+            console.log("client secret:", clientSecret)
         }
         getClientSecret();
 
@@ -61,7 +63,7 @@ function Payment() {
             }
             
         }).then(({paymentIntent}) => {
-            const history =useHistory;
+
             // paymentIntent = payment confirmation
             setSucceeded(true);
             setError(null);
@@ -100,7 +102,7 @@ function Payment() {
                     <div className='payment__items'>
                         {basket.map(item => (
                             <CheckoutProduct 
-                            key={item.id}
+                            // key={item.id}
                             id={item.id}
                             title={item.title}
                             image={item.image}
