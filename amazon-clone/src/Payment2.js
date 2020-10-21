@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import './Payment.css';
+import './Payment.css'
 import CheckoutProduct from './CheckoutProduct';
 import { useStateValue } from './StateProvider';
 // Import stripe
@@ -114,10 +114,10 @@ const CARD_ELEMENT_OPTIONS = {
     return (
 
             <div className='payment'>
-                <h1>Checkout (<Link to='/checkout'>{basket?.length} items</Link>)</h1>
+                {/* <h1>Checkout (<Link to='/checkout'>{basket?.length} items</Link>)</h1> */}
 
  
-                <div className='payment__sectionAddress>'>
+                {/* <div className='payment__sectionAddress>'>
                     <div className='payment__title'>
                         <h3 >Delivery Address</h3>
                     </div>
@@ -126,10 +126,10 @@ const CARD_ELEMENT_OPTIONS = {
                          <p>123 Gordon Street</p>
                          <p>Brisbane, QLD</p>
                     </div>
-                </div>
+                </div> */}
 
  
-                <div className='payment__section>'>
+                {/* <div className='payment__section>'>
                     <div className='payment__title'>
                         <h3  >Review items and delivery</h3>
                     </div>
@@ -145,7 +145,7 @@ const CARD_ELEMENT_OPTIONS = {
                             />
                         ))}
                     </div>
-                </div>
+                </div> */}
 
                 <div className='payment__section>'>
                     <div className='payment__title'>
