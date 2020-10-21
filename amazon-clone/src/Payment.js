@@ -1,13 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import CheckoutProduct from './CheckoutProduct';
 import './Payment.css'
 import { useStateValue } from './StateProvider';
 // Import stripe
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
-// import axios from './axios';
+import axios from './axios';
 
 // for currency
 import CurrencyFormat from "react-currency-format";
@@ -20,27 +20,28 @@ function Payment() {
     const [error, setError] = useState(null);
     const [disabled, setDisabled] = useState(true);
 
-    // Succeeded payment
+    // Succeeded payment or Processing
     const [succeeded, setSucceeded] = useState(false);
     const [processing, setProcessing] = useState('')
 
     // client secret
-    const  [clientSecret, setClientSecret]= useElements();
+    const  [clientSecret, setClientSecret]= useState(true);
 
     // For stripe payment React Hooks
     const stripe = useStripe();
     const elements = useElements();
 
-    
+    //For Client Secret
     useEffect(() => {
         // generate special stripe secret which allows us to change customer
         const getClientSecret = async () =>{
             const response = await axios({
                 method: 'post',
-                // stripe expects the total in a currencies subunits
+                // stripe expects the total in a currencies subunits 10 = 10000
                 url: `/payments/create?total=${getBasketTotal(basket) * 100}`
             });
             setClientSecret(response.data.clientSecret)
+            console.log(clientSecret)
         }
         getClientSecret();
 
@@ -50,12 +51,18 @@ function Payment() {
         e.preventDefault();
         setProcessing(true);
 
-        // client secret
+        // // client secret
+        // const history =useHistory;
 
+        // Payload card
         const payload = await stripe.confirmCardPayment(clientSecret,{
-            card: elements.getElement(CardElement)
+            payment_method:{
+                card: elements.getElement(CardElement)
+            }
+            
         }).then(({paymentIntent}) => {
-            // paymentIntent
+            const history =useHistory;
+            // paymentIntent = payment confirmation
             setSucceeded(true);
             setError(null);
             setProcessing(false)
@@ -93,6 +100,7 @@ function Payment() {
                     <div className='payment__items'>
                         {basket.map(item => (
                             <CheckoutProduct 
+                            key={item.id}
                             id={item.id}
                             title={item.title}
                             image={item.image}
