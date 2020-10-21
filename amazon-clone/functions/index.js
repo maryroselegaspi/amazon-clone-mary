@@ -7,3 +7,6 @@ const functions = require('firebase-functions');
 //   functions.logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
 // });
+
+const express = require ('express');
+const cors = require('cors');
