@@ -43,11 +43,12 @@ function Payment() {
                 url: `/payments/create?total=${getBasketTotal(basket) * 100}`
             });
             setClientSecret(response.data.clientSecret)
-            console.log("client secret:", clientSecret)
+            
         }
         getClientSecret();
 
     },[basket])
+    console.log("client secret:", clientSecret)
     // Submit CardElement form
     const handleSubmit = async(e) =>{
         e.preventDefault();
@@ -68,6 +69,9 @@ function Payment() {
             setSucceeded(true);
             setError(null);
             setProcessing(false)
+            dispatch({
+                type: 'EMPTY_BASKET'
+            })
             history.replace('/orders')
         })
     }
