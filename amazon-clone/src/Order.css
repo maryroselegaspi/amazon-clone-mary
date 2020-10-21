@@ -13,10 +13,6 @@
 }
 
 .order__total {
-  font-weight: 500;
+  font-weight: 700;
   text-align: right;
 }
-/* .order > h3 {
-  font-weight: 500;
-  text-align: right;
-} */

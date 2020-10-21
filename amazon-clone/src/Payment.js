@@ -92,6 +92,25 @@ function Payment() {
             setDisabled(e.empty);
             setError(e.error? e.error.message:'');
     }
+
+    // Custom styling can be passed to options when creating an Element.
+const CARD_ELEMENT_OPTIONS = {
+    style: {
+      base: {
+        color: '#32325d',
+        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+        fontSmoothing: 'antialiased',
+        fontSize: '16px',
+        '::placeholder': {
+          color: '#aab7c4'
+        }
+      },
+      invalid: {
+        color: '#fa755a',
+        iconColor: '#fa755a'
+      }
+    }
+  };
     return (
         <div className='payment'>
             <div className='payment__container'>
@@ -135,12 +154,17 @@ function Payment() {
                     <div className='payment__title'>
                         <h3>Payment Method</h3>
                     </div>
+                    <p>Credit/Debit Card</p>
                     <div className='payment__details'>
                         <form onSubmit={handleSubmit}>
-                            <CardElement  onChange={handleChange}/>
+                            <CardElement  
+                            onChange={handleChange}
+                            id="card-element"
+          options={CARD_ELEMENT_OPTIONS}
+          />
                             <div className='payment__priceContainer'>
                                 <CurrencyFormat
-                                    rendertext={(value) => (
+                                    renderText={(value) => (
                                         <h4>Order Total: {value} </h4>
                                     )}
                                     decimalScale={2}

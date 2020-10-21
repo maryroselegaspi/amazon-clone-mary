@@ -1,27 +1,27 @@
 .payment {
   background-color: white;
-  border: 1px solid violet;
+  /* border: 1px solid violet; */
 }
 
-.payment__container {
+/* .payment__container {
   text-align: center;
   padding: 10px;
   font-weight: 400;
   background-color: rgb(234, 237, 237);
   border-bottom: 1px solid lightgray;
   border: 1px solid blue;
-}
+} */
 
-.payment__container > h1,
+/* .payment__container > h1,
 a {
   text-decoration: none;
-  padding: 10px;
-  /* border-bottom: 1px solid lightgray; */
-  /* border: 1px solid red; */
-}
+  padding: 10px; */
+/* border-bottom: 1px solid lightgray; */
+/* border: 1px solid red; */
+/* } */
 
 .payment__section {
-  background-color: blue; /*Remove this*/
+  /* background-color: blue; Remove this */
   display: flex;
   padding: 20px;
   margin: 0 20px;
