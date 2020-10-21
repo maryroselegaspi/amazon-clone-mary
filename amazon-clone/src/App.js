@@ -11,6 +11,7 @@ import {auth} from './firebase';
 // For stripe payment
 import {loadStripe} from '@stripe/stripe-js';
 import {Elements} from '@stripe/react-stripe-js';
+import Orders from './Orders'
 
 const promise = loadStripe('pk_test_51HcTwABA8zqER3fxmg0jufL5hNpICRWEn55LkKj9aIf17Oo5haCfZsU5FYpfVJvyQ7KRAFzDEeEtvuh9zkZ23NGP00GM8fsXEf')
 
@@ -47,6 +48,10 @@ console.log(user)
     <Router>
       <div className="app">
         <Switch >
+          <Route path='/orders'>
+            <Header />
+            <Orders />
+          </Route>
           <Route path='/checkout'>
             <Header />
             {/* <h1>checkout</h1> */}
